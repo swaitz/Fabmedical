@@ -6,7 +6,7 @@ metadata:
   name: web
   namespace: ingress-demo
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: web
@@ -38,11 +38,10 @@ spec:
         name: web
         ports:
           - containerPort: 3000
-            hostPort: 80
             protocol: TCP
         resources:
           requests:
-            cpu: 1000m
+            cpu: 125m
             memory: 128Mi
         securityContext:
           privileged: false
