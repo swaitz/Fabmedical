@@ -6,7 +6,7 @@ metadata:
   name: api
   namespace: ingress-demo
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: api
@@ -41,11 +41,10 @@ spec:
           failureThreshold: 3
         ports:
           - containerPort: 3001
-            hostPort: 3001
             protocol: TCP
         resources:
           requests:
-              cpu: 1000m
+              cpu: 100m
               memory: 128Mi
         securityContext:
           privileged: false
